@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>monContour</class>
+ <widget class="QMainWindow" name="monContour">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1090</width>
+    <height>552</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QGroupBox" name="groupFiltre">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>150</y>
+      <width>161</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:13pt;
+
+
+
+</string>
+    </property>
+    <property name="title">
+     <string>Choix du Filtre</string>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>121</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="LayoutVertical">
+      <item>
+       <widget class="QPushButton" name="Canny">
+        <property name="styleSheet">
+         <string notr="true">font-size:11pt;
+font-family:roboto;
+font-weight:bold;
+
+</string>
+        </property>
+        <property name="text">
+         <string>Canny</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Sobel">
+        <property name="styleSheet">
+         <string notr="true">font-size:11pt;
+font-family:roboto;
+font-weight:bold;</string>
+        </property>
+        <property name="text">
+         <string>Sobel</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Prewitt">
+        <property name="styleSheet">
+         <string notr="true">font-size:11pt;
+font-family:roboto;
+font-weight:bold;</string>
+        </property>
+        <property name="text">
+         <string>Prewitt</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Roberts">
+        <property name="styleSheet">
+         <string notr="true">font-size:11pt;
+font-family:roboto;
+font-weight:bold;</string>
+        </property>
+        <property name="text">
+         <string>Roberts</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Laplacien">
+        <property name="styleSheet">
+         <string notr="true">font-size:11pt;
+font-family:roboto;
+font-weight:bold;
+</string>
+        </property>
+        <property name="text">
+         <string>Laplacien</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+     <zorder>Laplacien</zorder>
+     <zorder>Canny</zorder>
+     <zorder>Sobel</zorder>
+     <zorder>Prewitt</zorder>
+     <zorder>Roberts</zorder>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="imageSource">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>40</y>
+      <width>390</width>
+      <height>390</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style:solid;
+border-width:1px;
+background-color:rgba(0,0,0,0.7);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Ouvrir">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>460</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:15pt;
+border-style:solid;
+border-color:black;
+border-width:1px;
+background-color:#d34836;
+color:white;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Ouvrir</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="imageContour">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>40</y>
+      <width>390</width>
+      <height>390</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style:solid;
+border-width:1px;
+background-color:rgba(0,0,0,0.7);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupSeuillage">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>450</y>
+      <width>581</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:13pt;</string>
+    </property>
+    <property name="title">
+     <string>Seuillage</string>
+    </property>
+    <widget class="QSlider" name="slideSeuillage">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>511</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="maximum">
+      <number>255</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupLissage">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>30</y>
+      <width>161</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:13pt;</string>
+    </property>
+    <property name="title">
+     <string>Lissez votre image</string>
+    </property>
+    <widget class="QPushButton" name="Gaussien">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>129</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size:11pt;
+font-family:roboto;
+font-weight:bold;</string>
+     </property>
+     <property name="text">
+      <string>Gaussien</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Mediane">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>129</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size:11pt;
+font-family:roboto;
+font-weight:bold;</string>
+     </property>
+     <property name="text">
+      <string>Médiane</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="Enregistrer">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>460</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size:14pt;
+border-style:solid;
+border-color:black;
+border-width:1px;
+background-color:#d34836;
+color:white;
+</string>
+    </property>
+    <property name="text">
+     <string>Enregistrer</string>
+    </property>
+   </widget>
+  </widget>
+  <action name="actionOuvrir">
+   <property name="text">
+    <string>&amp;Ouvrir</string>
+   </property>
+  </action>
+  <action name="actionEnregistrer">
+   <property name="text">
+    <string>&amp;Enregistrer</string>
+   </property>
+  </action>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+  <action name="actionInterface_Qt">
+   <property name="text">
+    <string>Interface Qt</string>
+   </property>
+  </action>
+  <action name="actionFiltre">
+   <property name="text">
+    <string>Contour</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
